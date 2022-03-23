@@ -1,5 +1,5 @@
 matplotlib
 numpy
 scipy
--U scikit-image
+scikit-image
 streamlit_cropper
