@@ -3,3 +3,4 @@ numpy
 scipy
 scikit-image
 streamlit_cropper
+streamlit-drawable-canvas
