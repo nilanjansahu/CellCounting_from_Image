@@ -10,7 +10,7 @@ import pandas as pd
 from streamlit_cropper import st_cropper
 from PIL import Image
 from streamlit_drawable_canvas import st_canvas
-import random
+
 
 st.set_page_config(
         page_title="Count Cells",
@@ -37,6 +37,9 @@ aspect_dict = {
 }
 aspect_ratio = aspect_dict[aspect_choice]
 image = []
+width, height = (400, 400)
+mode = 'RGB'
+bg_image = Image.new(mode, (width, height))
 if img_file:
     img = Image.open(img_file)  #.convert('L')
     if not realtime_update:
