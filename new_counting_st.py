@@ -37,9 +37,6 @@ aspect_dict = {
 }
 aspect_ratio = aspect_dict[aspect_choice]
 image = []
-width, height = (400, 400)
-mode = 'RGB'
-bg_image = Image.new(mode, (width, height))
 if img_file:
     img = Image.open(img_file)  #.convert('L')
     if not realtime_update:
@@ -157,8 +154,7 @@ local_max_mask[tuple(local_max_coords.T)] = True
 markers = measure.label(local_max_mask)
 
 segmented_cells = segmentation.watershed(-distance, markers, mask=cells)
-print(segmented_cells)
-print(len(segmented_cells))
+
 
 table = measure.regionprops_table(segmented_cells,properties=['label', 'area', 'perimeter', 'centroid', 'axis_major_length', 'axis_minor_length'])
 min_area = st.slider('area minimum limit', min_value=1, max_value=int(max(table['area'])), value=50, step=1)
